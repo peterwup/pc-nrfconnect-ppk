@@ -20,7 +20,7 @@ sections:
   - "Editorial changes"
 - name: March 2024
   entries:
-  - "Updated the documentation for the Power Profiler app [v4.0.0](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/main/Changelog.md)"
+  - "Updated the documentation for the Power Profiler app [v4.0.0](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/main/Changelog.md)"
 - name: February 2024
   entries:
   - "Separated the application documentation from the [PPK2 hardware documentation](https://docs.nordicsemi.com/bundle/ug_ppk2/page/UG/ppk/PPK_user_guide_Intro.html)"

@@ -14,11 +14,11 @@ user application.
 The support for
 [Power Profiler Kit (PPK1)](https://www.nordicsemi.com/Software-and-tools/Development-Tools/Power-Profiler-Kit)
 has been deprecated since the
-[Power Profiler app v4.0.0-beta1](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/main/Changelog.md).
+[Power Profiler app v4.0.0-beta1](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/main/Changelog.md).
 The last application version to support PPK1 is
-[v3.5.5](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/main/Changelog.md)
+[v3.5.5](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/main/Changelog.md)
 with
-[nRF Connect for Desktop v4.4.0](https://github.com/NordicSemiconductor/pc-nrfconnect-launcher/blob/main/Changelog.md).
+[nRF Connect for Desktop v4.4.0](https://github.com/nordicsemi/pc-nrfconnect-launcher/blob/main/Changelog.md).
 
 ## Installation
 
@@ -39,8 +39,7 @@ hardware, see the
 
 ## Development
 
-See the
-[app development](https://nordicsemiconductor.github.io/pc-nrfconnect-docs/)
+See the [app development](https://nordicsemi.github.io/pc-nrfconnect-docs/)
 pages for details on how to develop apps for the nRF Connect for Desktop
 framework.
 
@@ -51,7 +50,7 @@ Please report issues on the [DevZone](https://devzone.nordicsemi.com) portal.
 ## Contributing
 
 See the
-[infos on contributing](https://nordicsemiconductor.github.io/pc-nrfconnect-docs/contributing)
+[infos on contributing](https://nordicsemi.github.io/pc-nrfconnect-docs/contributing)
 for details.
 
 ## License
@@ -73,21 +72,21 @@ A ppk2 file is a zip compressed file, containing 3 files:
 Mandatory Data:
 
 - `session.raw` in
-  [class FileData](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/globals.ts#L53-L112)
+  [class FileData](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/globals.ts#L53-L112)
     - 4 bytes for current: decimal in μA
     - 2 bytes for the digital channels: 2 bits per channel, LSB is digital
       channel 1 (D8-D7-D6-D5-D4-D3-D2-D1). Conversion of the 8-bit digital input
       to the 16-bit format is done in
-      [the function `convertBits16`](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/bitConversion.ts#L21)
+      [the function `convertBits16`](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/bitConversion.ts#L21)
 
 - Minimap condensed data in
-  [FoldingBuffer#saveToFile](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/foldingBuffer.ts#L118-L128)
+  [FoldingBuffer#saveToFile](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/foldingBuffer.ts#L118-L128)
 - Metadata stored in
-  [`saveFileHandler`](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/saveFileHandler.ts#L57-L60)
+  [`saveFileHandler`](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/saveFileHandler.ts#L57-L60)
   (samples per second must be the same as supported by our app)
 
 **Important**: No negative values are supported! Any values < 0.2 μA are
 interpreted as 0.
 
 Final compression of the 3 files into ppk2 in
-[`saveFileHandler`](https://github.com/NordicSemiconductor/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/saveFileHandler.ts#L40).
+[`saveFileHandler`](https://github.com/nordicsemi/pc-nrfconnect-ppk/blob/6e4da637f07d5f6995d96362368c781b71b5bc61/src/utils/saveFileHandler.ts#L40).
